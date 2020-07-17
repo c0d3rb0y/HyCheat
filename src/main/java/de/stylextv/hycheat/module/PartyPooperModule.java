@@ -5,7 +5,7 @@ import de.stylextv.hycheat.world.GlowManager;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.player.AbstractClientPlayerEntity;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.*;
 import net.minecraft.entity.item.ArmorStandEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -15,7 +15,8 @@ import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.EntityRayTraceResult;
 import net.minecraft.util.math.RayTraceResult;
-import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.math.*;
+import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraftforge.client.event.InputEvent;
 import net.minecraftforge.client.event.sound.PlaySoundEvent;
@@ -141,9 +142,9 @@ public class PartyPooperModule extends Module {
                             if(!GlowManager.isGlowing(playerEntity)) {
                                 GlowManager.addGlow(playerEntity,GlowManager.RED);
 
-                                Vec3d playerPos=Minecraft.getInstance().player.getPositionVector();
-                                Vec3d targetPos=playerEntity.getPositionVector();
-                                Vec3d loc=playerPos.add(targetPos.subtract(playerPos).normalize().mul(3,3,3));
+                                Vector3d playerPos=Minecraft.getInstance().player.getPositionVec();
+                                Vector3d targetPos = playerEntity.getPositionVec();
+                                Vector3d loc=playerPos.add(targetPos.subtract(playerPos).normalize().mul(3,3,3));
                                 Minecraft.getInstance().world.playSound(loc.getX(),loc.getY(),loc.getZ(), SoundEvents.ENTITY_EVOKER_CAST_SPELL, SoundCategory.PLAYERS,1,1,false);
                             }
                         } else {

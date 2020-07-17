@@ -16,7 +16,8 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvents;
-import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.math.*;
+import net.minecraft.util.math.vector.Vector3d;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -140,9 +141,9 @@ public class MurderMysteryModule extends Module {
                                 CommandHandler.sendFeedback("A murderer has been located: §4"+playerEntity.getName().getUnformattedComponentText());
                                 CommandHandler.sendFeedback("They are using this as a weapon: §b"+item.getName().getString());
                                 GlowManager.addGlow(playerEntity,GlowManager.RED_DARK);
-                                Vec3d playerPos=Minecraft.getInstance().player.getPositionVector();
-                                Vec3d targetPos=playerEntity.getPositionVector();
-                                Vec3d loc=playerPos.add(targetPos.subtract(playerPos).normalize().mul(3,3,3));
+                                Vector3d playerPos=Minecraft.getInstance().player.getPositionVec();
+                                Vector3d targetPos=playerEntity.getPositionVec();
+                                Vector3d loc=playerPos.add(targetPos.subtract(playerPos).normalize().mul(3,3,3));
                                 Minecraft.getInstance().world.playSound(loc.getX(),loc.getY(),loc.getZ(), SoundEvents.ENTITY_EVOKER_CAST_SPELL, SoundCategory.PLAYERS,1,1,false);
                             }
                         }

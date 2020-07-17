@@ -16,7 +16,7 @@ logoFile="logo.png" #optional
 # The modid of the mod
 modId="hycheat" #mandatory
 # The version number of the mod - there's a few well known ${} variables useable here or just hardcode it
-version="1.15.2-1.0.0" #mandatory
+version="${file.jarVersion}" #mandatory
  # A display name for the mod
 displayName="HyCheat" #mandatory
 # A URL to query for updates for this mod. See the JSON update specification <here>
@@ -26,7 +26,7 @@ displayURL="https://www.curseforge.com/minecraft/mc-mods/hycheat" #optional
 # A text field displayed in the mod UI
 credits="Special Thanks to the Hypixel Team §9❤" #optional
 # A text field displayed in the mod UI
-authors="StylexTV" #optional
+authors="StylexTV and c0d3rb0y" #optional
 # The description text for the mod (multi line!) (#mandatory)
 description='''
 This modification provides a handful
@@ -50,6 +50,6 @@ into the chat to get a list of available commands.
 [[dependencies.examplemod]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.15.2]"
+    versionRange="[1.16.1]"
     ordering="NONE"
     side="BOTH"

@@ -9,7 +9,8 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.util.NonNullList;
-import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.math.*;
+import net.minecraft.util.math.vector.Vector3d;
 import net.minecraftforge.client.event.InputEvent;
 
 import java.util.List;
@@ -104,8 +105,8 @@ public class FarmHuntModule extends Module {
             double targetLookDis=0;
             for(Entity e:Minecraft.getInstance().world.getAllEntities()) {
                 if(!e.equals(Minecraft.getInstance().player)&&e.isAlive()&&e.getDistanceSq(Minecraft.getInstance().player)<9&&GlowManager.isGlowing(e)&&isAnimal(e)) {
-                    Vec3d vec1=Minecraft.getInstance().player.getPositionVec().add(0,Minecraft.getInstance().player.getEyeHeight(),0);
-                    Vec3d vec2=e.getPositionVec().add(0,e.getEyeHeight(),0);
+                    Vector3d vec1=Minecraft.getInstance().player.getPositionVec().add(0,Minecraft.getInstance().player.getEyeHeight(),0);
+                    Vector3d vec2=e.getPositionVec().add(0,e.getEyeHeight(),0);
                     double dX = vec1.getX() - vec2.getX();
                     double dY = vec1.getY() - vec2.getY();
                     double dZ = vec1.getZ() - vec2.getZ();
