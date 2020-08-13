@@ -10,6 +10,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.*;
+import net.minecraft.util.math.vector.Vector3d;
 
 import java.util.HashMap;
 import java.util.List;
@@ -65,7 +66,7 @@ public class PropHuntModule extends Module {
                     if(e instanceof ArmorStandEntity) {
                         ArmorStandEntity stand=(ArmorStandEntity) e;
                         if(stand.getItemStackFromSlot(EquipmentSlotType.HEAD).getItem()!=Items.AIR||stand.getItemStackFromSlot(EquipmentSlotType.MAINHAND).getItem()!=Items.AIR) {
-                            Vec3d vec=stand.getPositionVector();
+                            Vector3d vec=stand.getPositionVec();
                             boolean addGlow=stand.lastTickPosX!=vec.getX()||stand.lastTickPosY!=vec.getY()||stand.lastTickPosZ!=vec.getZ();
                             if(addGlow) {
                                 glowTimers.put(stand,20*20);

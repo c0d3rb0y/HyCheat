@@ -11,7 +11,7 @@ import net.minecraft.util.text.event.HoverEvent;
 
 public class CommandHandler {
 
-    private static String PREFIX="§8§l[§9Hy§7Cheat§9Plus§8] §7";
+    private static String PREFIX="§8[§9Hy§7Cheat§91.16§8] §7";
 
     public static void onClientCommand(String cmd, String[] args) {
         if(cmd.equalsIgnoreCase("list")) {
